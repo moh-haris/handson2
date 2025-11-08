@@ -14,7 +14,7 @@ Date: 26 Oct, 2025.
 #include <string.h>
 
 int main() {
-    const char *fifo = "myfifonew";  // Updated FIFO name
+    const char *fifo = "myfifo";  // Updated FIFO name
     char message[100];
 
     int fd = open(fifo, O_WRONLY);
@@ -42,4 +42,5 @@ Enter message to send: Hello Haris
 Message sent!
 ============================================================================
 */
+
 
