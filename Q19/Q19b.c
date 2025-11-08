@@ -1,15 +1,31 @@
+/*
+========================================================================================================
+Name : Q19b
+Author : Mohammed Haris
+Description : Create a FIFO file by
+a. mknod command
+b. mkfifo command
+c. use strace command to find out, which command (mknod or mkfifo) is better.
+d. mknod system call
+e. mkfifo library function
+Date: 26 Oct, 2025.
+========================================================================================================
+*/
+
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <fcntl.h>
-#include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    const char *named_fifo = "fifo_call";
-    if (mknod(named_fifo, S_IFIFO | 0666, 0) == -1) {
-        perror("mknod");
-        exit(EXIT_FAILURE);
-    }
-    printf("FIFO created using mknod() system call: %s\n", named_fifo);
-    return 0;
+    return mkfifo("fifo2", 0666);
 }
+
+
+/*
+============================================================================
+OUTPUT
+
+haris@Haris:~/handson2/Q19$ gcc Q19.c -o Q19
+haris@Haris:~/handson2/Q19$ ./Q19
+
+============================================================================
+*/
